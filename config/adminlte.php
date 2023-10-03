@@ -318,13 +318,13 @@ return [
         ['header' => 'GURU & SISWA'],
         [
             'text'        => 'Data Guru',
-            'url'         => 'guru',
+            'url'         => 'admin/guru',
             'icon'        => 'far fa-fw fa-users',
             'can'         => 'isAdmin',
         ],
         [
             'text'        => 'Data Siswa',
-            'url'         => 'siswa',
+            'url'         => 'admin/siswa',
             'icon'        => 'far fa-fw fa-house',
             'can'         => 'isAdmin',
         ],

@@ -73,6 +73,10 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
@@ -92,6 +96,11 @@
 
     {{-- Extra Configured Plugins Scripts --}}
     @include('adminlte::plugins', ['type' => 'js'])
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     {{-- Livewire Script --}}
     @if(config('adminlte.livewire'))
@@ -149,7 +158,7 @@
                     Swal.fire({
                         type: 'error',
                         title: "Ooops",
-                        text: "{{ $error }}",
+                        text: "{{ $errors }}",
                     })
                     @endforeach
                 @endif
@@ -159,7 +168,6 @@
                 let baseurl = "<?=url("/")?>";
                 let fullURL = "<?=url()->full()?>";
     </script>
-
 </body>
 
 </html>
