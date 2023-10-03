@@ -12,6 +12,13 @@
             <div class="card">
                 <div class="card-body">
                     <p class="mb-0">You are logged in!</p>
+
+                    @if($user->roles_id == 1)
+                        Anda Login Sebagai Admin
+                    @elseif($user->roles_id == 2)
+                        Anda Login Sebagai Guru
+                    @endif
+
                 </div>
             </div>
         </div>
