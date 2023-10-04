@@ -305,7 +305,7 @@ return [
         ],
         [
             'text'        => 'Pendajwalan',
-            'url'         => 'pendajwalan',
+            'url'         => 'admin/penjadwalan',
             'icon'        => 'far fa-fw fa-schedule',
             'can'         => 'isAdmin',
         ],

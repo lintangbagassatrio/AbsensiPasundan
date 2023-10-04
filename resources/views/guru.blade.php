@@ -26,13 +26,13 @@
                         <th>AGAMA</th>
                         <th>PENDIDIKAN</th>
                         <th>JABATAN</th>
-                        <th>PELAJARAN</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $no=1; @endphp
                     @foreach($guru as $gurus)
+                    @if ($gurus->roles_id == 2)
                         <tr>
                             <td class="text-center">{{$no++}}</td>
                             <td>{{$gurus->name}}</td>
@@ -42,7 +42,6 @@
                             <td>{{$gurus->agama}}</td>
                             <td>{{$gurus->pendidikan}}</td>
                             <td>{{$gurus->jabatan}}</td>
-                            <td>{{$gurus->pelajaran}}</td>
                             <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <button type="button" id="btn-edit-guru" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editGuruModal" data-id="{{ $gurus->id }}">
@@ -60,6 +59,7 @@
                                 </div>
                             </td>
                         </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>
@@ -72,7 +72,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header justify-content-between">
-                <h5 class= "modal-title" id="exampleModalLabel">Tambah Data Guru</5>
+                <h5 class= "modal-title" id="exampleModalLabel">Tambah Data Guru</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -93,7 +93,7 @@
                             <label for="password">Password</label>
                             <input type="text"class="form-control" name="password" id="password" required/>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="email">Email</label>
                             <input type="email"class="form-control" name="email" id="email" required/>
                         </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nip">NIP</label>
-                            <input type="year"class="form-control" name="nip" id="nip" required/>
+                            <input type="text"class="form-control" name="nip" id="nip" required/>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nuptk">NUPTK</label>
@@ -143,15 +143,6 @@
                                 <option value="Staff TU" >Staff TU</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="pelajaran">Pelajaran</label>
-                            <select name="pelajaran" class="form-control" id="pelajaran">
-                                <option selected >Pilih</option>
-                                <option value="Matematika" >Matematika</option>
-                                <option value="IPA" >IPA</option>
-                                <option value="IPS" >IPS</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -187,7 +178,7 @@
                             <label for="username">Username</label>
                             <input type="text"class="form-control" name="username" id="edit-username" required/>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="email">Email</label>
                             <input type="email"class="form-control" name="email" id="edit-email" required/>
                         </div>
@@ -197,7 +188,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nip">NIP</label>
-                            <input type="year"class="form-control" name="nip" id="edit-nip" required/>
+                            <input type="text"class="form-control" name="nip" id="edit-nip" required/>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nuptk">NUPTK</label>
@@ -235,15 +226,6 @@
                                 <option value="Guru" >Guru</option>
                                 <option value="Guru Bidang" >Guru Bidang</option>
                                 <option value="Staff TU" >Staff TU</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="pelajaran">Pelajaran</label>
-                            <select name="pelajaran" class="form-control" id="edit-pelajaran">
-                                <option selected >Pilih</option>
-                                <option value="Matematika" >Matematika</option>
-                                <option value="IPA" >IPA</option>
-                                <option value="IPS" >IPS</option>
                             </select>
                         </div>
                     </div>
@@ -286,7 +268,6 @@
                         $('#edit-agama').val(res.agama);
                         $('#edit-pendidikan').val(res.pendidikan);
                         $('#edit-jabatan').val(res.jabatan);
-                        $('#edit-pelajaran').val(res.pelajaran);
                     },
                 });
             });

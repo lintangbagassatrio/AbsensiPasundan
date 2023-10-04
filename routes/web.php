@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\PenjadwalanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,13 @@ Route::middleware('is_admin')->group(function () {
     Route::get('admin/ajaxadmin/dataSiswa/{id}', [SiswaController::class, 'getDataSiswa']);
     Route::patch('admin/siswa/ubah', [SiswaController::class, 'ubah'])->name('siswa.ubah');
     Route::post('admin/siswa/delete/{id}', [SiswaController::class,'hapus'])->name('siswa.hapus');
+});
+
+// Penjadwalan Route -----------------------------------------------------------------------------------------------------
+Route::middleware('is_admin')->group(function () {
+    Route::get('admin/penjadwalan', [PenjadwalanController::class, 'index'])->name('penjadwalan');
+    Route::post('admin/penjadwalan/submit', [PenjadwalanController::class, 'submit'])->name('penjadwalan.submit');
+    Route::get('admin/ajaxadmin/dataPenjadwalan/{id}', [PenjadwalanController::class, 'getDataPenjadwalan']);
+    Route::patch('admin/penjadwalan/ubah', [PenjadwalanController::class, 'ubah'])->name('penjadwalan.ubah');
+    Route::post('admin/penjadwalan/delete/{id}', [PenjadwalanController::class,'hapus'])->name('penjadwalan.hapus');
 });
