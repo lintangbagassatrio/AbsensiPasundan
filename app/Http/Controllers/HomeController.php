@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('home', compact('user'));
+        $total_siswa = Siswa::count();
+        $total_guru = User::where('roles_id', 2)->count();
+        $total_kelas = User::whereNotNull('wali_kelas')->count();
+
+        return view('home', compact('user', 'total_siswa', 'total_guru', 'total_kelas'));
     }
 }

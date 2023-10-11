@@ -47,6 +47,11 @@ class GuruController extends Controller
         $guru->agama = $req->get('agama');
         $guru->pendidikan = $req->get('pendidikan');
         $guru->jabatan = $req->get('jabatan');
+        if ($req->get('wali_kelas') != 'Opsional'){
+            $guru->wali_kelas = $req->get('wali_kelas');
+        }elseif ($req->get('wali_kelas') == 'Opsional'){
+            $guru->wali_kelas = 'Tidak Punya';
+        }
         $guru->roles_id = 2;
         $guru->save();
         $notification = array(
@@ -84,6 +89,11 @@ class GuruController extends Controller
         $guru->agama = $req->get('agama');
         $guru->pendidikan = $req->get('pendidikan');
         $guru->jabatan = $req->get('jabatan');
+        if ($req->get('wali_kelas') != 'Opsional'){
+            $guru->wali_kelas = $req->get('wali_kelas');
+        }elseif ($req->get('wali_kelas') == 'Opsional'){
+            $guru->wali_kelas = 'Tidak Punya';
+        }
         $guru->save();
         $notification = array(
             'message' => 'Data Guru berhasil diubah', 'alert-type' => 'success'

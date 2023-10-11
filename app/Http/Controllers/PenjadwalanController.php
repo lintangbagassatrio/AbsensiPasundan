@@ -29,6 +29,7 @@ class PenjadwalanController extends Controller
             'guru' =>'required',
             'pelajaran' =>'required',
             'jurusan' =>'required',
+            'hari' =>'required',
             'waktu_mulai' =>'required',
             'waktu_selesai' =>'required',
         ]);
@@ -37,6 +38,7 @@ class PenjadwalanController extends Controller
         $penjadwalan->guru = $req->get('guru');
         $penjadwalan->pelajaran = $req->get('pelajaran');
         $penjadwalan->jurusan = $req->get('jurusan');
+        $penjadwalan->hari = $req->get('hari');
         $penjadwalan->waktu_mulai = $req->get('waktu_mulai');
         $penjadwalan->waktu_selesai = $req->get('waktu_selesai');
         $penjadwalan->save();
@@ -60,6 +62,7 @@ class PenjadwalanController extends Controller
             'guru' =>'required',
             'pelajaran' =>'required',
             'jurusan' =>'required',
+            'hari' =>'required',
             'waktu_mulai' =>'required',
             'waktu_selesai' =>'required',
         ]);
@@ -67,6 +70,7 @@ class PenjadwalanController extends Controller
         $penjadwalan->guru = $req->get('guru');
         $penjadwalan->pelajaran = $req->get('pelajaran');
         $penjadwalan->jurusan = $req->get('jurusan');
+        $penjadwalan->hari = $req->get('hari');
         $penjadwalan->waktu_mulai = $req->get('waktu_mulai');
         $penjadwalan->waktu_selesai = $req->get('waktu_selesai');
         $penjadwalan->save();

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\PenjadwalanController;
 
 /*
@@ -52,4 +53,11 @@ Route::middleware('is_admin')->group(function () {
     Route::get('admin/ajaxadmin/dataPenjadwalan/{id}', [PenjadwalanController::class, 'getDataPenjadwalan']);
     Route::patch('admin/penjadwalan/ubah', [PenjadwalanController::class, 'ubah'])->name('penjadwalan.ubah');
     Route::post('admin/penjadwalan/delete/{id}', [PenjadwalanController::class,'hapus'])->name('penjadwalan.hapus');
+});
+
+// Absensi Route -----------------------------------------------------------------------------------------------------
+Route::middleware('auth')->group(function () {
+    Route::get('guru/absensi', [AbsensiController::class, 'index'])->name('absensi');
+    Route::get('guru/absensi/absen/{id}', [AbsensiController::class, 'absen'])->name('absen');
+    Route::post('guru/absensi/absen', [AbsensiController::class, 'submit'])->name('absensi.submit');
 });

@@ -299,7 +299,7 @@ return [
         ['header' => 'ABSENSI & PENJADWALAN'],
         [
             'text'        => 'Absensi',
-            'url'         => 'absensi',
+            'url'         => 'guru/absensi',
             'icon'        => 'far fa-fw fa-book',
             'can'         => 'isGuru',
         ],

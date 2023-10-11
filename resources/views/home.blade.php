@@ -41,7 +41,7 @@
                                     </svg>
                                     <div class="title">
                                         <h5>Jumlah Siswa</h5>
-                                        <h3 class="font-weight-bold text-right">754</h3>
+                                        <h3 class="font-weight-bold text-right">{{$total_siswa}}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                     </svg>
                                     <div class="title">
                                         <h5>Jumlah Guru</h5>
-                                        <h3 class="font-weight-bold text-right">53</h3>
+                                        <h3 class="font-weight-bold text-right">{{$total_guru}}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                     </svg>
                                     <div class="title">
                                         <h5>Jumlah Kelas</h5>
-                                        <h3 class="font-weight-bold text-right">36</h3>
+                                        <h3 class="font-weight-bold text-right">{{$total_kelas}}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                     </svg>
                                     <div class="title">
                                         <h5>Jumlah Mata Pelajaran</h5>
-                                        <h3 class="font-weight-bold text-right">432</h3>
+                                        <h3 class="font-weight-bold text-right">32</h3>
                                     </div>
                                 </div>
                             </div>

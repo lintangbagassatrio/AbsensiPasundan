@@ -26,6 +26,7 @@
                         <th>AGAMA</th>
                         <th>PENDIDIKAN</th>
                         <th>JABATAN</th>
+                        <th>WALI KELAS</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
@@ -36,12 +37,13 @@
                         <tr>
                             <td class="text-center">{{$no++}}</td>
                             <td>{{$gurus->name}}</td>
-                            <td>{{$gurus->lahir}}</td>
-                            <td>{{$gurus->nip}}</td>
-                            <td>{{$gurus->nuptk}}</td>
-                            <td>{{$gurus->agama}}</td>
-                            <td>{{$gurus->pendidikan}}</td>
-                            <td>{{$gurus->jabatan}}</td>
+                            <td class="text-center">{{$gurus->lahir}}</td>
+                            <td class="text-center">{{$gurus->nip}}</td>
+                            <td class="text-center">{{$gurus->nuptk}}</td>
+                            <td class="text-center">{{$gurus->agama}}</td>
+                            <td class="text-center">{{$gurus->pendidikan}}</td>
+                            <td class="text-center">{{$gurus->jabatan}}</td>
+                            <td class="text-center">{{$gurus->wali_kelas}}</td>
                             <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <button type="button" id="btn-edit-guru" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editGuruModal" data-id="{{ $gurus->id }}">
@@ -93,7 +95,7 @@
                             <label for="password">Password</label>
                             <input type="text"class="form-control" name="password" id="password" required/>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="email">Email</label>
                             <input type="email"class="form-control" name="email" id="email" required/>
                         </div>
@@ -143,6 +145,18 @@
                                 <option value="Staff TU" >Staff TU</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="wali_kelas">Wali Kelas</label>
+                            <select name="wali_kelas" class="form-control" id="wali_kelas">
+                                <option selected >Opsional</option>
+                                <option value="X TKJ 1" >X TKJ 1</option>
+                                <option value="X TKJ 2" >X TKJ 2</option>
+                                <option value="IX TKJ 1" >IX TKJ 1</option>
+                                <option value="X RPL 1" >X RPL 1</option>
+                                <option value="IX RPL 1" >IX RPL 1</option>
+                                <option value="IX RPL 1" >IX RPL 1</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -178,7 +192,7 @@
                             <label for="username">Username</label>
                             <input type="text"class="form-control" name="username" id="edit-username" required/>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="email">Email</label>
                             <input type="email"class="form-control" name="email" id="edit-email" required/>
                         </div>
@@ -228,6 +242,18 @@
                                 <option value="Staff TU" >Staff TU</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="wali_kelas">Wali Kelas</label>
+                            <select name="wali_kelas" class="form-control" id="edit-wali_kelas">
+                                <option selected >Opsional</option>
+                                <option value="X TKJ 1" >X TKJ 1</option>
+                                <option value="X TKJ 2" >X TKJ 2</option>
+                                <option value="IX TKJ 1" >IX TKJ 1</option>
+                                <option value="X RPL 1" >X RPL 1</option>
+                                <option value="IX RPL 1" >IX RPL 1</option>
+                                <option value="IX RPL 1" >IX RPL 1</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -268,6 +294,7 @@
                         $('#edit-agama').val(res.agama);
                         $('#edit-pendidikan').val(res.pendidikan);
                         $('#edit-jabatan').val(res.jabatan);
+                        $('#edit-wali_kelas').val(res.wali_kelas);
                     },
                 });
             });

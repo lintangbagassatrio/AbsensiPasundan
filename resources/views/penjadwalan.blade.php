@@ -23,6 +23,7 @@
                         <th>GURU</th>
                         <th>PELAJARAN</th>
                         <th>JURUSAN</th>
+                        <th>HARI</th>
                         <th>MULAI</th>
                         <th>SELESAI</th>
                         <th>AKSI</th>
@@ -37,6 +38,7 @@
                             <td>{{$penjadwalans->guru}}</td>
                             <td>{{$penjadwalans->pelajaran}}</td>
                             <td>{{$penjadwalans->jurusan}}</td>
+                            <td class="text-center">{{$penjadwalans->hari}}</td>
                             <td class="text-center">{{$penjadwalans->waktu_mulai}}</td>
                             <td class="text-center">{{$penjadwalans->waktu_selesai}}</td>
                             <td class="text-center">
@@ -120,6 +122,18 @@
                                 <option value="Kehutanan" >Kehutanan</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="hari">Hari</label>
+                            <select name="hari" class="form-control" id="hari">
+                                <option selected >Pilih</option>
+                                <option value="Senin" >Senin</option>
+                                <option value="Selasa" >Selasa</option>
+                                <option value="Rabu" >Rabu</option>
+                                <option value="Kamis" >Kamis</option>
+                                <option value="Jumat" >Jumat</option>
+                                <option value="Sabtu" >Sabtu</option>
+                            </select>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="waktu_mulai">Waktu Mulai</label>
                             <input type="time"class="form-control" name="waktu_mulai" id="waktu_mulai" required/>
@@ -198,6 +212,18 @@
                                 <option value="Kehutanan" >Kehutanan</option>
                             </select>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="hari">Hari</label>
+                            <select name="hari" class="form-control" id="edit-hari">
+                                <option selected >Pilih</option>
+                                <option value="Senin" >Senin</option>
+                                <option value="Selasa" >Selasa</option>
+                                <option value="Rabu" >Rabu</option>
+                                <option value="Kamis" >Kamis</option>
+                                <option value="Jumat" >Jumat</option>
+                                <option value="Sabtu" >Sabtu</option>
+                            </select>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="waktu_mulai">Waktu Mulai</label>
                             <input type="time"class="form-control" name="waktu_mulai" id="edit-waktu_mulai" required/>
@@ -241,6 +267,7 @@
                         $('#edit-pelajaran').val(res.pelajaran);
                         $('#edit-guru').val(res.guru);
                         $('#edit-jurusan').val(res.jurusan);
+                        $('#edit-hari').val(res.hari);
                         $('#edit-waktu_mulai').val(res.waktu_mulai);
                         $('#edit-waktu_selesai').val(res.waktu_selesai);
                     },
