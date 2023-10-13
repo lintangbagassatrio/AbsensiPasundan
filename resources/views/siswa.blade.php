@@ -204,6 +204,7 @@
 
 @section('js')
     <script>
+        
         $(function(){
             $(document).on('click','#btn-edit-siswa', function(){
 

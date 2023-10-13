@@ -5,6 +5,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PenjadwalanController;
 
 /*
@@ -60,4 +61,16 @@ Route::middleware('auth')->group(function () {
     Route::get('guru/absensi', [AbsensiController::class, 'index'])->name('absensi');
     Route::get('guru/absensi/absen/{id}', [AbsensiController::class, 'absen'])->name('absen');
     Route::post('guru/absensi/absen', [AbsensiController::class, 'submit'])->name('absensi.submit');
+});
+
+// Laporan Admin Route -----------------------------------------------------------------------------------------------------
+Route::middleware('is_admin')->group(function () {
+    Route::get('admin/laporan', [LaporanController::class, 'admin'])->name('laporan.admin');
+});
+
+// Laporan Guru Route -----------------------------------------------------------------------------------------------------
+Route::middleware('auth')->group(function () {
+    Route::get('guru/laporan', [LaporanController::class, 'guru'])->name('laporan.guru');
+    Route::get('guru/laporan/ubah', [LaporanController::class, 'ubah'])->name('laporan.guru.ubah');
+    Route::get('guru/ajaxadmin/dataLaporan/{id}', [LaporanController::class, 'getDataLaporan']);
 });

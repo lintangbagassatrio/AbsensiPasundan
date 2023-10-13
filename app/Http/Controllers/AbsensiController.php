@@ -36,17 +36,6 @@ class AbsensiController extends Controller
 
     public function submit(Request $request)
     {
-        $validate = $request->validate([
-            'name' => 'required|max:255',
-            'induk' =>'required',
-            'nisn' =>'required',
-            'keterangan' =>'required',
-            'pelajaran' =>'required',
-            'kelas' =>'required',
-            'waktu_selesai' =>'required',
-            'waktu_mulai' =>'required',
-            'guru' =>'required',
-        ]);
         foreach ($request->input as $key => $value) {
             $absensi = new Absensi;
             $absensi->induk = $value['induk'];

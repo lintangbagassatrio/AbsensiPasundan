@@ -76,6 +76,7 @@ class SiswaController extends Controller
             'message' => 'Data Siswa berhasil diubah', 'alert-type' => 'success'
         );
         return redirect()->route('siswa')->with($notification);
+
     }
 
     public function hapus($id) {

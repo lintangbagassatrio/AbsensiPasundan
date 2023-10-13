@@ -23,7 +23,7 @@
                                         @if($user->roles_id == 1)
                                         Anda Login Sebagai Admin
                                         @elseif($user->roles_id == 2)
-                                        Anda Login Sebagai Guru
+                                        Selamat Datang <h4 class="font-weight-bold">{{$user->name}}</h4>
                                         @endif
                                     </div>
                                 </div>

@@ -296,7 +296,7 @@ return [
             'icon'        => 'far fa-fw fa-home',
             'can'         => ['isAdmin', 'isGuru'],
         ],
-        ['header' => 'ABSENSI & PENJADWALAN'],
+        ['header' => 'DATA MANAGEMENT'],
         [
             'text'        => 'Absensi',
             'url'         => 'guru/absensi',
@@ -311,11 +311,19 @@ return [
         ],
         [
             'text'        => 'Laporan',
-            'url'         => 'laporan',
+            'url'         => 'guru/laporan',
             'icon'        => 'far fa-fw fa-books',
             'can'         => 'isGuru',
         ],
-        ['header' => 'GURU & SISWA'],
+        [
+            'text'        => 'Laporan',
+            'url'         => 'admin/laporan',
+            'icon'        => 'far fa-fw fa-books',
+            'can'         => 'isAdmin',
+        ],
+        [   'header' => 'USER MANAGEMENT',
+            'can'         =>  'isAdmin'
+        ],
         [
             'text'        => 'Data Guru',
             'url'         => 'admin/guru',

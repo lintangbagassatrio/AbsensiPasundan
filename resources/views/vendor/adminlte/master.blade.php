@@ -73,10 +73,9 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
-
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}">
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
@@ -99,8 +98,8 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+    {{-- <link rel="stylesheet" href="sweetalert2.min.css"> --}}
 
     {{-- Livewire Script --}}
     @if(config('adminlte.livewire'))
@@ -121,52 +120,52 @@
             showConfirmButton: false,
             timer: 3000,
         })
-        @if(Session::has('massage'))
+
+        @if(Session::has('message'))
             var type = "{{Session::get('alert-type')}}";
             switch (type){
                 case 'info':
                     Toast.fire({
-                        type: 'info',
+                        icon: 'info',
                         title: "{{ Session::get('message') }}"
                     })
                     break;
                     case 'success':
                     Toast.fire({
-                        type: 'success',
+                        icon: 'success',
                         title: "{{ Session::get('message') }}"
                     })
                     break;
                     case 'error':
                     Toast.fire({
-                        type: 'error',
+                        icon: 'error',
                         title: "{{ Session::get('message') }}"
                     })
                     break;
                     case 'info':
                     Toast.fire({
-                        type: 'info',
+                        icon: 'info',
                         title: "Ooops",
                         text: "{{ Session::get('message') }}"
-                        timer: 3000
                     })
                     break;
             }
-            @endif
+        @endif
 
-            @if ($errors->any())
-                @foreach($errors->all() as $errors)
-                    Swal.fire({
-                        type: 'error',
-                        title: "Ooops",
-                        text: "{{ $errors }}",
-                    })
-                    @endforeach
-                @endif
+        @if ($errors->any())
+        @foreach($errors->all() as $errors)
+            Swal.fire({
+                type: 'error',
+                title: "Ooops",
+                text: "{{ $errors }}",
+            })
+            @endforeach
+        @endif
 
-                $('#table-data').DataTable();
+        $('#table-data').DataTable();
 
-                let baseurl = "<?=url("/")?>";
-                let fullURL = "<?=url()->full()?>";
+        let baseurl = "<?=url("/")?>";
+        let fullURL = "<?=url()->full()?>";
     </script>
 </body>
 
