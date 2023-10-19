@@ -71,6 +71,6 @@ Route::middleware('is_admin')->group(function () {
 // Laporan Guru Route -----------------------------------------------------------------------------------------------------
 Route::middleware('auth')->group(function () {
     Route::get('guru/laporan', [LaporanController::class, 'guru'])->name('laporan.guru');
-    Route::get('guru/laporan/ubah', [LaporanController::class, 'ubah'])->name('laporan.guru.ubah');
+    Route::patch('guru/laporan/ubah', [LaporanController::class, 'ubah'])->name('laporan.guru.ubah');
     Route::get('guru/ajaxadmin/dataLaporan/{id}', [LaporanController::class, 'getDataLaporan']);
 });
