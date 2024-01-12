@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Absensi;
 use Illuminate\Http\Request;
+use App\Exports\AbsensiExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
 {
@@ -42,5 +44,12 @@ class LaporanController extends Controller
             'message' => 'Absen Siswa berhasil diubah', 'alert-type' => 'success'
         );
         return redirect()->route('laporan.guru')->with($notification);
+    }
+
+    public function exportadminexcel(){
+        return Excel::download(new AbsensiExport, 'absensi.xlsx');
+    }
+    public function exportguruexcel(){
+        return Excel::download(new AbsensiExport, 'absensi.xlsx');
     }
 }

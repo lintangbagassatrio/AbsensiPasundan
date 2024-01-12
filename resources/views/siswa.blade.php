@@ -11,9 +11,14 @@
     <div class="card card-default">
     <div class="card-header">{{__('Pengelolaan Siswa')}}</div>
         <div class="card-body">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBukuModal">
-                <i class="fa fa-plus">   Tambah Data</i>
-            </button>
+            <div class="w-100 d-flex justify-content-between" style="margin-right: 10px">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBukuModal">
+                    <i class="fa fa-plus">   Tambah Data</i>
+                </button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#import">
+                    <i class="fa fa-plus">   Import</i>
+                </button>
+            </div>
             <hr>
             <table id="table-data" class="table table-responsive-lg table-stripped">
                 <thead>
@@ -32,11 +37,11 @@
                     @foreach($siswa as $siswas)
                         <tr>
                             <td class="text-center">{{$no++}}</td>
-                            <td>{{$siswas->induk}}</td>
-                            <td>{{$siswas->nisn}}</td>
+                            <td class="text-center">{{$siswas->induk}}</td>
+                            <td class="text-center">{{$siswas->nisn}}</td>
                             <td>{{$siswas->name}}</td>
-                            <td>{{$siswas->kelas}}</td>
-                            <td>{{$siswas->jurusan}}</td>
+                            <td class="text-center">{{$siswas->kelas}}</td>
+                            <td class="text-center">{{$siswas->jurusan}}</td>
                             <td class="text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <button type="button" id="btn-edit-siswa" class="btn btn-sm btn-success" data-toggle="modal" data-target="#editSiswaModal" data-id="{{ $siswas->id }}">

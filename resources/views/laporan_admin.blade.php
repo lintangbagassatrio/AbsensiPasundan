@@ -16,7 +16,9 @@
                     <a></a>
                     <div class="buttin">
                         <a href="" class="btn btn-info">Import</a>
-                        <a href="" class="btn btn-primary">Export</a>
+                        <a href="/exportadminexcel" class="btn btn-success btn-rounded m-1">
+                            Export Excel
+                        </a>
                     </div>
                 </div>
             </div>

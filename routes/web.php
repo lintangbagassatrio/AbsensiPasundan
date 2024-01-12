@@ -69,6 +69,10 @@ Route::middleware('auth')->group(function () {
 // Laporan Admin Route -----------------------------------------------------------------------------------------------------
 Route::middleware('is_admin')->group(function () {
     Route::get('admin/laporan', [LaporanController::class, 'admin'])->name('laporan.admin');
+    Route::get('/exportadminexcel', [LaporanController::class, 'exportadminexcel'])->name('export.admin.excel');
+});
+Route::middleware('auth')->group(function () {
+    Route::get('/exportguruexcel', [LaporanController::class, 'exportguruexcel'])->name('export.guru.excel');
 });
 
 // Laporan Guru Route -----------------------------------------------------------------------------------------------------

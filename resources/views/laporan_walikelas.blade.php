@@ -15,7 +15,9 @@
             <div class="row">
                 <div class="w-100 d-flex justify-content-between" style="margin-right: 10px">
                     <a></a>
-                    <a href="" class="btn btn-success">Export</a>
+                    <a href="/exportguruexcel" class="btn btn-success btn-rounded m-1">
+                        Export Excel
+                    </a>
                 </div>
             </div>
             <hr>
