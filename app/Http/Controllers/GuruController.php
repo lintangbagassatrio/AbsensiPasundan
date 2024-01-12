@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Guru;
 use App\Models\User;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,8 @@ class GuruController extends Controller
     {
         $user = Auth::user();
         $guru = User::All();
-        return view('guru', compact('guru'));
+        $namaKelas = Kelas::All();
+        return view('guru', compact('guru', 'namaKelas'));
     }
 
     public function submit(Request $req)

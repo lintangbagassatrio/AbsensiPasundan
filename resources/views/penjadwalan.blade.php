@@ -83,12 +83,9 @@
                             <label for="kelas">Kelas</label>
                             <select name="kelas" class="form-control" id="kelas">
                                 <option selected >Pilih</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
@@ -104,22 +101,18 @@
                             <label for="pelajaran">Pelajaran</label>
                             <select name="pelajaran" class="form-control" id="pelajaran">
                                 <option selected >Pilih</option>
-                                <option value="Matematika" >Matematika</option>
-                                <option value="Bahasa Indonesia" >Bahasa Indonesia</option>
-                                <option value="Informatika" >Informatika</option>
-                                <option value="Teknik Mesin" >Teknik Mesin</option>
-                                <option value="Bahasa Inggris" >Bahasa Inggris</option>
-                                <option value="Sejarah" >Sejarah</option>
+                                @foreach ($namaMapel as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="jurusan">Jurusan</label>
                             <select name="jurusan" class="form-control" id="jurusan">
                                 <option selected >Pilih</option>
-                                <option value="Teknologi Komputer dan Jaringan" >Teknologi Komputer dan Jaringan</option>
-                                <option value="Rekayasa Perangkat Lunak" >Rekayasa Perangkat Lunak</option>
-                                <option value="Otomotif" >Otomotif</option>
-                                <option value="Kehutanan" >Kehutanan</option>
+                                @foreach ($namaJurusan as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
@@ -173,12 +166,9 @@
                             <label for="kelas">Kelas</label>
                             <select name="kelas" class="form-control" id="edit-kelas">
                                 <option selected >Pilih</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
@@ -186,7 +176,7 @@
                             <select name="guru" class="form-control" id="edit-guru">
                                 <option selected >Pilih</option>
                                 @foreach ($namaGuru as $nama)
-                                    <option value="{{$nama}}" >{{$nama}}</option>
+                                    <option value="{{$nama}}" >{{$nama}}</option>`
                                 @endforeach
                             </select>
                         </div>
@@ -194,22 +184,18 @@
                             <label for="pelajaran">Pelajaran</label>
                             <select name="pelajaran" class="form-control" id="edit-pelajaran">
                                 <option selected >Pilih</option>
-                                <option value="Matematika" >Matematika</option>
-                                <option value="Bahasa Indonesia" >Bahasa Indonesia</option>
-                                <option value="Informatika" >Informatika</option>
-                                <option value="Teknik Mesin" >Teknik Mesin</option>
-                                <option value="Bahasa Inggris" >Bahasa Inggris</option>
-                                <option value="Sejarah" >Sejarah</option>
+                                @foreach ($namaMapel as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="jurusan">Jurusan</label>
                             <select name="jurusan" class="form-control" id="edit-jurusan">
                                 <option selected >Pilih</option>
-                                <option value="Teknologi Komputer dan Jaringan" >Teknologi Komputer dan Jaringan</option>
-                                <option value="Rekayasa Perangkat Lunak" >Rekayasa Perangkat Lunak</option>
-                                <option value="Otomotif" >Otomotif</option>
-                                <option value="Kehutanan" >Kehutanan</option>
+                                @foreach ($namaJurusan as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-12">

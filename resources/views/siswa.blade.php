@@ -95,22 +95,18 @@
                             <label for="kelas">Kelas</label>
                             <select name="kelas" class="form-control" id="kelas">
                                 <option selected >Pilih</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="jurusan">Jurusan</label>
                             <select name="jurusan" class="form-control" id="jurusan">
                                 <option selected >Pilih</option>
-                                <option value="Teknologi Komputer dan Jaringan" >Teknologi Komputer dan Jaringan</option>
-                                <option value="Rekayasa Perangkat Lunak" >Rekayasa Perangkat Lunak</option>
-                                <option value="Otomotif" >Otomotif</option>
-                                <option value="Kehutanan" >Kehutanan</option>
+                                @foreach ($namaJurusan as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -164,22 +160,18 @@
                             <label for="kelas">Kelas</label>
                             <select name="kelas" class="form-control" id="edit-kelas">
                                 <option selected >Pilih</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="jurusan">Jurusan</label>
                             <select name="jurusan" class="form-control" id="edit-jurusan">
                                 <option selected >Pilih</option>
-                                <option value="Teknologi Komputer dan Jaringan" >Teknologi Komputer dan Jaringan</option>
-                                <option value="Rekayasa Perangkat Lunak" >Rekayasa Perangkat Lunak</option>
-                                <option value="Otomotif" >Otomotif</option>
-                                <option value="Kehutanan" >Kehutanan</option>
+                                @foreach ($namaJurusan as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-6">
@@ -204,7 +196,6 @@
 
 @section('js')
     <script>
-        
         $(function(){
             $(document).on('click','#btn-edit-siswa', function(){
 

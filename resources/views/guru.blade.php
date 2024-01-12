@@ -149,12 +149,9 @@
                             <label for="wali_kelas">Wali Kelas</label>
                             <select name="wali_kelas" class="form-control" id="wali_kelas">
                                 <option selected >Opsional</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -246,12 +243,9 @@
                             <label for="wali_kelas">Wali Kelas</label>
                             <select name="wali_kelas" class="form-control" id="edit-wali_kelas">
                                 <option selected >Opsional</option>
-                                <option value="X TKJ 1" >X TKJ 1</option>
-                                <option value="X TKJ 2" >X TKJ 2</option>
-                                <option value="IX TKJ 1" >IX TKJ 1</option>
-                                <option value="X RPL 1" >X RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
-                                <option value="IX RPL 1" >IX RPL 1</option>
+                                @foreach ($namaKelas as $nama)
+                                    <option value="{{$nama->nama}}" >{{$nama->nama}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

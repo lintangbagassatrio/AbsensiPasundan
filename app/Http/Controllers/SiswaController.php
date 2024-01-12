@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Siswa;
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +19,9 @@ class SiswaController extends Controller
     {
         $user = Auth::user();
         $siswa = Siswa::All();
-        return view('siswa', compact('siswa'));
+        $namaKelas = Kelas::All();
+        $namaJurusan = Jurusan::All();
+        return view('siswa', compact('siswa', 'namaKelas', 'namaJurusan'));
     }
 
     public function submit(Request $req)

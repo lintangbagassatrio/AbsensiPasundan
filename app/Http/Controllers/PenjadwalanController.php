@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Kelas;
+use App\Models\Mapel;
+use App\Models\Jurusan;
 use App\Models\Penjadwalan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +21,11 @@ class PenjadwalanController extends Controller
     {
         $user = Auth::user();
         $namaGuru = User::all()->where('roles_id', 2)->pluck('name');
+        $namaKelas = Kelas::all();
+        $namaJurusan = Jurusan::all();
+        $namaMapel = Mapel::all();
         $penjadwalan = Penjadwalan::All();
-        return view('penjadwalan', compact('penjadwalan', 'namaGuru'));
+        return view('penjadwalan', compact('penjadwalan', 'namaGuru', 'namaMapel', 'namaJurusan', 'namaKelas'));
     }
 
     public function submit(Request $req)
