@@ -83,8 +83,7 @@
     </form>
 @stop
 
-@section('auth_footer')
-    {{-- Password reset link --}}
+{{-- @section('auth_footer')
     @if($password_reset_url)
         <p class="my-0">
             <a href="{{ $password_reset_url }}">
@@ -92,8 +91,6 @@
             </a>
         </p>
     @endif
-
-    {{-- Register link --}}
     @if($register_url)
         <p class="my-0">
             <a href="{{ $register_url }}">
@@ -101,4 +98,4 @@
             </a>
         </p>
     @endif
-@stop
+@stop --}}

@@ -9,8 +9,9 @@
 @section('content')
 <div class="container-fluid">
     <div class="card card-default">
-    <div class="card-header">Laporan Absen Siswa   <span class="font-weight-bold">{{$user->wali_kelas}}</span></div>
+    <div class="card-header">Laporan Absen Siswa Kelas  <span class="font-weight-bold">{{$user->wali_kelas}}</span></div>
         <div class="card-body">
+            @if ($user->wali_kelas != "Tidak Punya")
             <div class="row">
                 <div class="w-100 d-flex justify-content-between" style="margin-right: 10px">
                     <a></a>
@@ -18,7 +19,7 @@
                 </div>
             </div>
             <hr>
-            <table id="table-data" class="table table-responsive-lg table-bordered">
+            <table id="table-data" class="table table-responsive-lg table-stripped">
                 <thead>
                     <tr class="text-center">
                         <th>NO</th>
@@ -58,6 +59,7 @@
                     @endforeach
                 </tbody>
             </table>
+            @endif
         </div>
     </div>
 </div>

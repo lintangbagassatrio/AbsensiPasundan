@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PenjadwalanController;
 
@@ -20,7 +23,7 @@ use App\Http\Controllers\PenjadwalanController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
@@ -73,4 +76,31 @@ Route::middleware('auth')->group(function () {
     Route::get('guru/laporan', [LaporanController::class, 'guru'])->name('laporan.guru');
     Route::patch('guru/laporan/ubah', [LaporanController::class, 'ubah'])->name('laporan.guru.ubah');
     Route::get('guru/ajaxadmin/dataLaporan/{id}', [LaporanController::class, 'getDataLaporan']);
+});
+
+// Jurusan Route -----------------------------------------------------------------------------------------------------
+Route::middleware('is_admin')->group(function () {
+    Route::get('admin/jurusan', [JurusanController::class, 'index'])->name('jurusan');
+    Route::post('admin/jurusan/submit', [JurusanController::class, 'submit'])->name('jurusan.submit');
+    Route::get('admin/ajaxadmin/dataJurusan/{id}', [JurusanController::class, 'getDataJurusan']);
+    Route::patch('admin/jurusan/ubah', [JurusanController::class, 'ubah'])->name('jurusan.ubah');
+    Route::post('admin/jurusan/delete/{id}', [JurusanController::class,'hapus'])->name('jurusan.hapus');
+});
+
+// Kelas Route -----------------------------------------------------------------------------------------------------
+Route::middleware('is_admin')->group(function () {
+    Route::get('admin/kelas', [KelasController::class, 'index'])->name('kelas');
+    Route::post('admin/kelas/submit', [KelasController::class, 'submit'])->name('kelas.submit');
+    Route::get('admin/ajaxadmin/dataKelas/{id}', [KelasController::class, 'getDataKelas']);
+    Route::patch('admin/kelas/ubah', [KelasController::class, 'ubah'])->name('kelas.ubah');
+    Route::post('admin/kelas/delete/{id}', [KelasController::class,'hapus'])->name('kelas.hapus');
+});
+
+// Mapel Route -----------------------------------------------------------------------------------------------------
+Route::middleware('is_admin')->group(function () {
+    Route::get('admin/mapel', [MapelController::class, 'index'])->name('mapel');
+    Route::post('admin/mapel/submit', [MapelController::class, 'submit'])->name('mapel.submit');
+    Route::get('admin/ajaxadmin/dataMapel/{id}', [MapelController::class, 'getDataMapel']);
+    Route::patch('admin/mapel/ubah', [MapelController::class, 'ubah'])->name('mapel.ubah');
+    Route::post('admin/mapel/delete/{id}', [MapelController::class,'hapus'])->name('mapel.hapus');
 });

@@ -37,7 +37,7 @@
         <div class="card-body">
             <form method="post" action="{{ route ('absensi.submit')}}" enctype="multipart/form-data">
                 @csrf
-                <table id="table-data" class="table table-responsive-lg table-bordered">
+                <table id="table-data" class="table table-responsive-lg table-stripped">
                     <thead>
                         <tr class="text-center">
                             <th>NO</th>

@@ -296,7 +296,7 @@ return [
             'icon'        => 'far fa-fw fa-home',
             'can'         => ['isAdmin', 'isGuru'],
         ],
-        ['header' => 'DATA MANAGEMENT'],
+        ['header' => 'ABSEN MANAGEMENT'],
         [
             'text'        => 'Absensi',
             'url'         => 'guru/absensi',
@@ -321,7 +321,7 @@ return [
             'icon'        => 'far fa-fw fa-books',
             'can'         => 'isAdmin',
         ],
-        [   'header' => 'USER MANAGEMENT',
+        [   'header' => 'DATA MANAGEMENT',
             'can'         =>  'isAdmin'
         ],
         [
@@ -333,6 +333,24 @@ return [
         [
             'text'        => 'Data Siswa',
             'url'         => 'admin/siswa',
+            'icon'        => 'far fa-fw fa-house',
+            'can'         => 'isAdmin',
+        ],
+        [
+            'text'        => 'Data Kelas',
+            'url'         => 'admin/kelas',
+            'icon'        => 'far fa-fw fa-house',
+            'can'         => 'isAdmin',
+        ],
+        [
+            'text'        => 'Data Jurusan',
+            'url'         => 'admin/jurusan',
+            'icon'        => 'far fa-fw fa-house',
+            'can'         => 'isAdmin',
+        ],
+        [
+            'text'        => 'Data Mata Pelajaran',
+            'url'         => 'admin/mapel',
             'icon'        => 'far fa-fw fa-house',
             'can'         => 'isAdmin',
         ],
