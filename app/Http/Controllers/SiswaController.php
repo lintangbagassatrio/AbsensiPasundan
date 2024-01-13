@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Jurusan;
+use App\Imports\SiswaImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SiswaController extends Controller
 {
@@ -92,5 +94,13 @@ class SiswaController extends Controller
             'success' => $success,
             'message' => $message,
         ]);
+    }
+
+    public function importexcel(Request $req){
+        $data = $req->file('file');
+        $namafile = $data->getClientOriginalName();
+        $data->move('SiswaData',  $namafile);
+        Excel::import(new  SiswaImport, \public_path('/SiswaData/'.$namafile));
+        return \redirect()->back();
     }
 }

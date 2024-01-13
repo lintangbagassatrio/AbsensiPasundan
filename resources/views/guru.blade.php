@@ -11,9 +11,14 @@
     <div class="card card-default">
     <div class="card-header">{{__('Pengelolaan Guru')}}</div>
         <div class="card-body">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBukuModal">
-                <i class="fa fa-plus">   Tambah Data</i>
-            </button>
+            <div class="w-100 d-flex justify-content-between" style="margin-right: 10px">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBukuModal">
+                    <i class="fa fa-plus">   Tambah Data</i>
+                </button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                    Import
+                </button>
+            </div>
             <hr>
             <table id="table-data" class="table table-responsive-lg table-stripped">
                 <thead>
@@ -256,6 +261,33 @@
                     <button type="submit" class="btn btn-success">Update</button>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Import Data Guru</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="{{ route ('import.guru.excel')}}" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group col-md-12">
+                        <label for="file">File</label>
+                        <input type="file"class="form-control" name="file" id="edit-file" required/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

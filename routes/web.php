@@ -39,6 +39,7 @@ Route::middleware('is_admin')->group(function () {
     Route::get('admin/ajaxadmin/dataGuru/{id}', [GuruController::class, 'getDataGuru']);
     Route::patch('admin/guru/ubah', [GuruController::class, 'ubah'])->name('guru.ubah');
     Route::post('admin/guru/delete/{id}', [GuruController::class,'hapus'])->name('guru.hapus');
+    Route::post('/importguruexcel', [GuruController::class, 'importexcel'])->name('import.guru.excel');
 });
 
 // Siswa Route -----------------------------------------------------------------------------------------------------
@@ -48,6 +49,7 @@ Route::middleware('is_admin')->group(function () {
     Route::get('admin/ajaxadmin/dataSiswa/{id}', [SiswaController::class, 'getDataSiswa']);
     Route::patch('admin/siswa/ubah', [SiswaController::class, 'ubah'])->name('siswa.ubah');
     Route::post('admin/siswa/delete/{id}', [SiswaController::class,'hapus'])->name('siswa.hapus');
+    Route::post('/importsiswaexcel', [SiswaController::class, 'importexcel'])->name('import.siswa.excel');
 });
 
 // Penjadwalan Route -----------------------------------------------------------------------------------------------------

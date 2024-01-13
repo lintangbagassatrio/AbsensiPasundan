@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Guru;
 use App\Models\User;
 use App\Models\Kelas;
+use App\Imports\GuruImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GuruController extends Controller
 {
@@ -112,6 +114,14 @@ class GuruController extends Controller
             'success' => $success,
             'message' => $message,
         ]);
+    }
+
+    public function importexcel(Request $req){
+        $data = $req->file('file');
+        $namafile = $data->getClientOriginalName();
+        $data->move('GuruData',  $namafile);
+        Excel::import(new  GuruImport, \public_path('/GuruData/'.$namafile));
+        return \redirect()->back();
     }
 
 }
