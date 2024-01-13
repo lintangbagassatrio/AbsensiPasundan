@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\Models\Siswa;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class SiswaImport implements ToModel
+class SiswaImport implements WithHeadingRow, ToModel
 {
     /**
     * @param array $row
@@ -15,13 +16,13 @@ class SiswaImport implements ToModel
     public function model(array $row)
     {
         return new Siswa([
-            'induk' => $row['1'],
-            'nisn' => $row['2'],
-            'name' => $row['3'],
-            'kelas' => $row['4'],
-            'jurusan' => $row['5'],
-            'lahir' => $row['6'],
-            'alamat' => $row['7'],
+            'induk' => $row['induk'],
+            'nisn' => $row['nisn'],
+            'name' => $row['name'],
+            'kelas' => $row['kelas'],
+            'jurusan' => $row['jurusan'],
+            'lahir' => $row['lahir'],
+            'alamat' => $row['alamat'],
         ]);
     }
 }
